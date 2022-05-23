@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login <3 </title>
+        
+        
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace
+    }
+    .content{
+        width: 250px;
+        height: 450px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px 0   #2874a6;
+        border-radius: 30px;
+    }
+    body{
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient( #b7d6c7,  #f9e79f );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .forms{
+        background-color: transparent;
+        border: none;
+        color: #154360;
+        font-weight: bold;
+    }
+    #user, #passw{
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid #154360;
+    }
+    #verificar{
+        left: 35px;
+        font-weight: bolder;
+        position: relative;
+        background: transparent;
+        border: none;
+        padding: 4px 20px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px 0   #2874a6;
+    }
+    #verificar:focus{
+        background: #154360;
+        color: #fff;
+    }
+</style>
+<body>
+    <div class="content">
+        <form action="" class="forms">
+            USER:
+            <br><br>
+            <input type="text" name="text" id="user">
+            <br><br>
+            PASSWORD:
+            <br><br>
+            <input type="password" name="" id="passw">
+            <br><br><br>
+            <input type="button" value="ACCEPT" onclick="verifica()" id="verificar">
+        </form>
+    </div>
+
+    <script>
+        let user = document.getElementById("user");
+        let pass = document.getElementById("passw");
+
+        function verifica(){
+            if(pass.value === "k014m0kn" && user.value === "keila84@j.lv"){
+                alert("Todo correcto");
+                alert("INSTRUCCIONES: si desea pasar texto normal a codigo debe escribir las letras separadas con espacios, ejemplo: hola => h o l a")
+                location.href = 'convert.html'
+                
+            }else{
+                alert("Contraseña o usuario incorrectos, intente nuevamente :D o comuni con Joni :3");
+                location.href = 'index.html'
+            }
+        }
+    </script>
+</body>
+</html>

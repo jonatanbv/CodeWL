@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert :3 </title>
+</head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace
+    }
+    .content{
+        width: 600px;
+        height: 450px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0 0 15px 0   #2874a6;
+        border-radius: 30px;
+    }
+    body{
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient( #b7d6c7,  #f9e79f );
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .formulario{
+        
+        width: 250px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+    }
+    #binary, #alpha{
+        width: 230px;
+        padding: 10px;
+        background: transparent;
+        border: 1px solid #2874a6;
+        box-shadow: 0 0 15px 0   #2874a6;
+        resize: none;
+        border-radius: 20px;
+        
+    }
+    #btn, #btn2{
+        background: transparent;
+        box-shadow: 0 0 15px 0   #2874a6;
+        border: none;
+        padding: 3px 15px;
+        border-radius: 10px;
+        position: relative;
+        left: 25px;
+
+    }
+    #btn3{
+        background: transparent;
+        box-shadow: 0 0 15px 0   #2874a6;
+        border: none;
+        padding: 3px 15px;
+        border-radius: 10px;
+        position: relative;
+        left: 90px;
+    }
+    #btn:focus, #btn2:focus, #btn3:focus{
+        background: #2874a6;
+        color: #fff;
+    }
+    .txt{
+        position: absolute;
+        top: 10px;
+        text-align: center;
+    }
+    @media (max-width:500px) {
+        .content{
+            width: 300px;
+            
+        }
+        
+    }
+</style>
+<body>
+    <div class="txt">
+        <h1>Instrucciones: </h1>
+        <p>Aplicar fuego con mucho cuidado y sin quemar a la tarjeta e ingresar el codigo en el primer recuadro</p>
+    </div>
+    
+    <div class="content">
+        <form action="" class="formulario">
+            <input id="binary">
+            <br><br>
+            <div id="alpha"></div>
+            <br><br>
+            <input type="button" id="btn" value="CONV TXT" onclick="conv()">
+            <input type="button" id="btn2" value="CONV COD" onclick="convB()">
+            <br><br>
+            <input type="button" id="btn3" value="CLEAR" onclick="clears()">
+        </form>
+        
+    </div>
+
+    <script>
+        let A="1";
+        let B="10";
+        let C="11";
+        let D="100";
+        let E="101";
+        let F="110";
+        let G="111";
+        let H="1000";
+        let I="1001";
+        let J="1010";
+        let K="1011";
+        let L="1100";
+        let M="1101";
+        let N="11100";
+        let ñ="11110";
+        let O="10000";
+        let P="10001";
+        let Q="10010";
+        let R="10011";
+        let S="10100";
+        let T="10101";
+        let U="10110";
+        let V="10111";
+        let W="11000";
+        let X="11001";
+        let Y="11010";
+        let Z="11011";
+        let meses = ['Enero', 'febrero', 'marzo'];
+
+        function clears(){
+            location.href = 'convert.html'
+        }
+
+        function conv(){
+            let txts = document.getElementById('binary').value;
+
+            let vector = txts.split(" ");
+            let vectorConv = [];
+            
+            for(i=0;i<vector.length;i++){
+                vectorConv[i] = abecedarioBin(vector[i]);
+            }
+            let textConv = vectorConv.join(" ");
+            document.getElementById('alpha').innerHTML = textConv;
+        }
+        function convB(){
+            let txts = document.getElementById('binary').value;
+            let txtss = txts.toLocaleUpperCase();
+            let vector = txtss.split(" ");
+            let vectorConv = [];
+
+            for(i=0;i<vector.length;i++){
+                vectorConv[i] = abecedariotxt(vector[i]);
+            }
+
+            let textConv = vectorConv.join(" ");
+            document.getElementById('alpha').innerHTML = textConv;
+
+
+        }
+        function abecedarioBin(letterB){
+            if(letterB===A){
+                return "A";
+            }else if(letterB===B){
+                return "B";
+            }else if(letterB===C){
+                return "C";
+            }else if(letterB===D){
+                return "D";
+            }else if(letterB===E){
+                return "E";
+            }else if(letterB===F){
+                return "F";
+            }else if(letterB===G){
+                return "G";
+            }else if(letterB===H){
+                return "H"
+            }else if(letterB===I){
+                return "I";
+            }else if(letterB===J){
+                return "J";
+            }else if(letterB===K){
+                return "K";
+            }else if(letterB===L){
+                return "L";
+            }else if(letterB===M){
+                return "M";
+            }else if(letterB===N){
+                return "N";
+            }else if(letterB===ñ){
+                return "ñ";
+            }else if(letterB===O){
+                return "O";
+            }else if(letterB===P){
+                return "P";
+            }else if(letterB===Q){
+                return "Q";
+            }else if(letterB===R){
+                return "R";
+            }else if(letterB===S){
+                return "S";
+            }else if(letterB===T){
+                return "T";
+            }else if(letterB===U){
+                return "U";
+            }else if(letterB===V){
+                return "V";
+            }else if(letterB===W){
+                return "W";
+            }else if(letterB===X){
+                return "X";
+            }else if(letterB===Y){
+                return "Y";
+            }else if(letterB===Z){
+                return "Z"
+            }
+        }
+        function abecedariotxt(letterB){
+            if(letterB==="A"){
+                return A;
+            }else if(letterB==="B"){
+                return B;
+            }else if(letterB==="C"){
+                return C;
+            }else if(letterB==="D"){
+                return D;
+            }else if(letterB==="E"){
+                return E;
+            }else if(letterB==="F"){
+                return F;
+            }else if(letterB==="G"){
+                return G;
+            }else if(letterB==="H"){
+                return H;
+            }else if(letterB==="I"){
+                return I;
+            }else if(letterB==="J"){
+                return J;
+            }else if(letterB==="K"){
+                return K;
+            }else if(letterB==="L"){
+                return L;
+            }else if(letterB==="M"){
+                return M;
+            }else if(letterB==="N"){
+                return N;
+            }else if(letterB==="ñ"){
+                return ñ;
+            }else if(letterB==="O"){
+                return O;
+            }else if(letterB==="P"){
+                return P;
+            }else if(letterB==="Q"){
+                return Q;
+            }else if(letterB==="R"){
+                return R;
+            }else if(letterB==="S"){
+                return S;
+            }else if(letterB==="T"){
+                return T;
+            }else if(letterB==="U"){
+                return U;
+            }else if(letterB==="V"){
+                return V;
+            }else if(letterB==="W"){
+                return W;
+            }else if(letterB==="X"){
+                return X;
+            }else if(letterB==="Y"){
+                return Y;
+            }else if(letterB==="Z"){
+                return Z;
+            }
+        }
+    </script>
+</body>
+</html>
